@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "feather-icons": "^4.28.0",
     "next": "10.2.0",
     "react": "17.0.2",

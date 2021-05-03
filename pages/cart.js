@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Home} from "../components";
 import AppLayout from "./app_layout";
+import {Cart} from "../components";
 import ENV from "../constants/app_env";
+
+const title = "Cart";
 
 export default function () {
 
@@ -13,8 +15,8 @@ export default function () {
     }, []);
 
     return (
-        <AppLayout lang={lang} title={'Flitools'}>
-            <Home lang={lang}/>
+        <AppLayout lang={lang} title={title}>
+            <Cart lang={lang}/>
         </AppLayout>
-    );
+    )
 }

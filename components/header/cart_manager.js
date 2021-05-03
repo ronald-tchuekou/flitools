@@ -10,6 +10,7 @@ import Lang from "../../src/lang";
 const Cart_manager = ({lang}) => {
 
     let [commands, setCommands] = useState([]);
+    const uid = '55IED';
 
     /**
      * Function that return the total amount.
@@ -43,32 +44,44 @@ const Cart_manager = ({lang}) => {
                         <h6 className="font-weight-bolder mb-0">Total:</h6>
                         <h6 className="text-primary font-weight-bolder mb-0">{getCountAmount()}</h6>
                     </div>
-                    <a className="btn btn-primary btn-block" href="">{Lang.header.see_my_cart[lang]}</a>
+                    <a className="btn btn-primary btn-block" href={`/cart?uid=${uid}`}>{Lang.header.see_my_cart[lang]}</a>
                 </li>
             </ul>
         </li>
     );
 }
 
+/**
+ * Function that set item of cart-notification.
+ * @param {string} lang
+ * @param {{quantity: number, product: {}}} item
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const CartItem = ({lang, item}) => {
+    /**
+     * Function that return amount of this product.
+     * @returns {number}
+     */
+    const getAmount = () => {
+        return 884744;
+    };
     return (
         <div className="media align-items-center">
             <img className="d-block rounded mr-1"
-                 src="app-assets/images/pages/eCommerce/1.png" alt="donuts"
+                 src={item.product.img_url} alt="donuts"
                  width="62"/>
             <div className="media-body">
                 <i className="ficon cart-item-remove" data-feather="x"> </i>
                 <div className="media-heading">
-                    <h6 className="cart-item-title"><a className="text-body" href="#"> Apple
-                        watch 5</a></h6>
-                    <small className="cart-item-by">By Apple</small>
+                    <h6 className="cart-item-title"><a className="text-body" href="#">{item.product.name}</a></h6>
                 </div>
                 <div className="cart-item-qty">
                     <div className="input-group">
-                        <input className="touchspin-cart" type="number" value="1"/>
+                        <input className="touchspin-cart" type="number" value={item.quantity}/>
                     </div>
                 </div>
-                <h5 className="cart-item-price">$374.90</h5>
+                <h5 className="cart-item-price">{getAmount()} FCFA</h5>
             </div>
         </div>
     );

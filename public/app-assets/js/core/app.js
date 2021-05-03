@@ -994,7 +994,7 @@ window.colors = {
 
   // Set layout on screen load
   //? Comment it if you don't want to sync layout with local db
-  // setLayout(currentLocalStorageLayout);
+  setLayout(currentLocalStorageLayout);
 
   function setLayout(currentLocalStorageLayout) {
     var navLinkStyle = $('.nav-link-style'),
@@ -1034,6 +1034,7 @@ window.colors = {
       });
     }
   }
+
 })(window, document, jQuery);
 
 // To use feather svg icons with different sizes

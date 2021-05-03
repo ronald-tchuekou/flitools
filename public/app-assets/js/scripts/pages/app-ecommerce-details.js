@@ -52,37 +52,37 @@ $(function () {
     });
   }
   // On cart & view cart btn click to v
-  if (btnCart.length) {
-    btnCart.on('click', function (e) {
-      var $this = $(this),
-        addToCart = $this.find('.add-to-cart');
-      if (addToCart.length > 0) {
-        e.preventDefault();
-        addToCart.text('View In Cart').removeClass('add-to-cart').addClass('view-in-cart');
-        $this.attr('href', checkout);
-        toastr['success']('', 'Added Item In Your Cart 🛒', {
-          closeButton: true,
-          tapToDismiss: false,
-          rtl: isRtl
-        });
-      }
-    });
-  }
+  // if (btnCart.length) {
+  //   btnCart.on('click', function (e) {
+  //     var $this = $(this),
+  //       addToCart = $this.find('.add-to-cart');
+  //     if (addToCart.length > 0) {
+  //       e.preventDefault();
+  //       addToCart.text('View In Cart').removeClass('add-to-cart').addClass('view-in-cart');
+  //       $this.attr('href', checkout);
+  //       toastr['success']('', 'Added Item In Your Cart 🛒', {
+  //         closeButton: true,
+  //         tapToDismiss: false,
+  //         rtl: isRtl
+  //       });
+  //     }
+  //   });
+  // }
 
   // For Wishlist Icon
-  if (wishlist.length) {
-    wishlist.on('click', function () {
-      var $this = $(this);
-      $this.find('svg').toggleClass('text-danger');
-      if ($this.find('svg').hasClass('text-danger')) {
-        toastr['success']('', 'Added to wishlist ❤️', {
-          closeButton: true,
-          tapToDismiss: false,
-          rtl: isRtl
-        });
-      }
-    });
-  }
+  // if (wishlist.length) {
+  //   wishlist.on('click', function () {
+  //     var $this = $(this);
+  //     $this.find('svg').toggleClass('text-danger');
+  //     if ($this.find('svg').hasClass('text-danger')) {
+  //       toastr['success']('', 'Added to wishlist ❤️', {
+  //         closeButton: true,
+  //         tapToDismiss: false,
+  //         rtl: isRtl
+  //       });
+  //     }
+  //   });
+  // }
 
   // Product color options
   if (productOption.length) {
