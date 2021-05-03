@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import {Scripts} from "./index";
 import {useEffect} from "react";
 import ENV from "../constants/app_env";
 
